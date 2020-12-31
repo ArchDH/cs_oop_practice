@@ -1,0 +1,128 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cs_practice_01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Console Output
+            Console.WriteLine("---Console Output example---");
+            Console.WriteLine("Hello World");
+
+            // Data types
+            // $ is string interpolation
+            Console.WriteLine("\n---Datatype example---");
+            int a = 10;
+            float b = 112.321F;
+            double c = 10.123;
+            decimal d = 10.123M;
+            string e = "string";
+            object[] ary01 = new object[] { a, b, c, d, e };
+
+            foreach (var i in ary01)
+            {
+                Console.WriteLine($"{i} is {i.GetType()}");
+            }
+
+            // String class
+            Console.WriteLine("\n---string class example---");
+            string string_test = "abcde";
+            Console.WriteLine(string_test.Contains('a'));
+
+            // Math Class
+            Console.WriteLine("\n---math class example---");
+            double[] ary02 = new double[] { 0, Math.PI / 2, Math.PI, 2 * Math.PI / 3, 2 * Math.PI };
+            foreach (double i in ary02)
+            {
+                Console.WriteLine(Math.Sin(i));
+            }
+
+            // User input
+            Console.WriteLine("\n---user input example---");
+            Console.Write("Please write something : ");
+            var input = Console.ReadLine();
+            Console.WriteLine($"Your input is : {input}");
+
+            // Array
+            Console.WriteLine("\n---1d 2d array example---");
+            int[] ary03 = { 1, 2, 3 };
+            Console.WriteLine($"Length of ary03 : {ary03.Length}");
+            int[] ary04 = new int[3] { 1, 2, 3 };
+            Console.WriteLine($"Length of ary04 : {ary04.Length}");
+            int[] ary05 = new int[3];
+            Console.WriteLine($"Length of ary05 : {ary05.Length}");
+            double[,] ary06 = new double[3, 3];
+            Console.WriteLine($"Length of ary06 : {ary06.Length}");
+
+            // boolean operations
+            Console.WriteLine("\n---boolean operation example---");
+            Console.WriteLine("AND GATE");
+            bool[] x = { true, false };
+            bool[] y = { true, false };
+            foreach (bool xvar in x)
+            {
+                foreach (bool yvar in y)
+                {
+                    Console.WriteLine($"|{xvar,-5} and {yvar,5}| = |{xvar && yvar,5}|");
+                }
+            }
+
+            Console.WriteLine("OR GATE");
+            foreach (bool xvar in x)
+            {
+                foreach (bool yvar in y)
+                {
+                    Console.WriteLine($"|{xvar,-5} and {yvar,5}| = |{xvar || yvar,5}|");
+                }
+            }
+            Console.WriteLine("XOR GATE");
+            foreach (bool xvar in x)
+            {
+                foreach (bool yvar in y)
+                {
+                    Console.WriteLine($"|{xvar,-5} and {yvar,5}| = |{xvar ^ yvar,5}|");
+                }
+            }
+
+            Console.WriteLine("NAND GATE");
+            foreach (bool xvar in x)
+            {
+                foreach (bool yvar in y)
+                {
+                    Console.WriteLine($"|{xvar,-5} and {yvar,5}| = |{!(xvar && yvar),5}|");
+                }
+            }
+            // conditional statements
+            Console.WriteLine("\n---conditional example---");
+            int cs = 10;
+            if (cs == 1) { Console.WriteLine("cs=1"); }
+            if (cs == 2) { Console.WriteLine("cs=2"); }
+            else { Console.WriteLine("cs=none"); }
+
+            // Loop statements
+            int loop_i = 0;
+
+            Console.WriteLine("\n---Loop example---");
+            for (int i = 0; i < ary01.Length; Console.Write($"increment ->"), ++i)
+            {
+                Console.WriteLine(i);
+            }
+
+            while (loop_i < 5)
+            {
+                Console.WriteLine($"While loop i = {loop_i}");
+                loop_i++;
+            }
+
+            do
+            {
+                Console.WriteLine("do-while");
+            } while (loop_i > 10);
+        }
+    }
+}
